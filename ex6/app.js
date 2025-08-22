@@ -6,8 +6,8 @@ app.get("/imc", (req, res) => {
   const { peso, altura } = req.query;
 
   // validação dos parâmetros
-  if (!peso || !altura || isNaN(peso) || isNaN(altura)) {
-    return res.status(400).send("Parâmetros inválidos! Use /imc?peso=70&altura=1.75");
+  if (peso == undefined|| altura== undefined || isNaN(peso) || isNaN(altura)) {
+    return res.status(400).send("Campos obrigatórios não preenchidos ou inválidos!");
   }
 
   const imc = (peso / (altura * altura)).toFixed(2);

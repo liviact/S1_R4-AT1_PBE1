@@ -24,7 +24,7 @@ app.get("/calculadora", (req, res) => {
                 break;
                 
             case "divisao":
-                if ((primeiroNumero = !0) && (segundoNumero = !0)) {
+                if ((primeiroNumero != 0) && (segundoNumero != 0)) {
                     resultado = parseFloat(primeiroNumero) / parseFloat(segundoNumero);
                 } else {
                     return res.status(400).send(`operação inválida!`);
